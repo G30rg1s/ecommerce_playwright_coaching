@@ -11,7 +11,7 @@ export class FinishPage {
         this.page = page;
         
         this.thankYouMessage = '[data-test="complete-header"]';
-        this.backHomeButton = '#back-to-products';
+        this.backHomeButton = '[data-test="back-to-products"]';
     }
 
 
@@ -27,6 +27,9 @@ export class FinishPage {
 
     
     async clickBackHomeButton() {
+        
+        console.log(await this.page.content());
+        await this.page.waitForSelector(this.backHomeButton, { state: 'attached' });
         await this.page.click(this.backHomeButton);
     }
 }

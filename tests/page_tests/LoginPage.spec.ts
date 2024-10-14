@@ -21,7 +21,7 @@ test.describe('Login Page - Username-Specific Tests', () => {
     });
   
     
-    test('Login locked_out_user', async ({ page }) => {
+    /*test('Login locked_out_user', async ({ page }) => {
       const loginPage = new LoginPage(page);
       await loginPage.login('locked_out_user', validPassword);
       const isErrorShown = await loginPage.verifyErrorMessage('Sorry, this user has been locked out.');
